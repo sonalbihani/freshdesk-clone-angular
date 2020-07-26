@@ -49,10 +49,12 @@ export class TicketsComponent implements OnInit, AfterViewInit {
       })
       this.tickets_data = this.tickets_data.map((d) => {
         d.source = this.sourceValues.find((i) =>i.id == d.source).name
+        if(this.contacts_data!=null){
         d.requester_id = this.contacts_data.find((i) =>i.id == d.requester_id).name
+        }
         d.category = this.categoryValues.find((i) => i.id == parseInt(d.category)).name
         d.status = this.statusValues.find((i) =>i.id == d.status).name
-        if(d.responder_id!=null){
+        if(d.responder_id!=null && this.user_data!=null){
           d.responder_id = this.user_data.find((i)=> i.id == d.responder_id).name
         }  
         return d
