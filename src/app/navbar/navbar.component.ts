@@ -17,12 +17,13 @@ export class NavbarComponent implements OnInit {
   }
   logout() {
     this.authService.logout();
-    this.check_navbar()
     this.router.navigate(['/login']);
   }
 
   ngOnInit(): void {
-    this.check_navbar()
+    
+  }
+  check_navbar(){
     if (localStorage.getItem('user-token') == null) {
       document.getElementById("tick-id").style.display="none";
       document.getElementById("cont").style.display="none";
@@ -37,9 +38,6 @@ export class NavbarComponent implements OnInit {
       document.getElementById("cont").style.display="block";
       document.getElementById("logout-id").style.display="block";
     }
-  }
-  check_navbar(){
-    
   }
 
 }
