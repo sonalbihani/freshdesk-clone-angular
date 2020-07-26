@@ -6,7 +6,7 @@ import {TicketData,ContactData,UserData} from '../model'
   providedIn: 'root'
 })
 export class AuthService {
-  API_URL = 'http://localhost:5000/';
+  API_URL = 'https://freshdesk-clone-api.herokuapp.com/';
   constructor(private http: HttpClient) { }
 
   addUser(user: UserData): Observable<any>{
@@ -17,7 +17,7 @@ export class AuthService {
     return this.http.get<any>(this.API_URL+'users');
   }
   loginUser(creds): Observable<any>{
-    return this.http.post<any>(this.API_URL+'/auth',creds)
+    return this.http.post<any>(this.API_URL+'auth',creds)
   }
   isLoggedIn() {
     if (localStorage.getItem('user-token')) {

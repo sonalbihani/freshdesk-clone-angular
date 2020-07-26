@@ -9,7 +9,9 @@ declare var $;
 })
 export class ContactsComponent implements OnInit,AfterViewInit {
   contacts_data;
-  constructor(private dataService: DataService,private router: Router) { }
+  constructor(private dataService: DataService,private router: Router) {
+    this.load_contacts();
+   }
   
 
   @ViewChild('dataTable', {static: false}) dataTable: ElementRef;
@@ -19,8 +21,8 @@ export class ContactsComponent implements OnInit,AfterViewInit {
   ngOnInit(): void {
     
 }
-ngAfterViewInit(): void{
-  this.load_contacts();
+ngAfterViewInit(): void{ 
+  
   
 }
 rowClickHandler(data){
