@@ -12,17 +12,17 @@ import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { ContactUpdateComponent } from './contact-update/contact-update.component';
-
+import {AuthGuard} from './_service/auth.guard'
 
 const routes: Routes = [
   {
     path:"",
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:"login",
     component: LoginComponent,
-    runGuardsAndResolvers: "always"
   },
   {
     path: "register",
@@ -30,35 +30,43 @@ const routes: Routes = [
   },
   {
     path:"tickets",
-    component: TicketsComponent
+    component: TicketsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "ticket/new",
-    component: TicketCreateComponent
+    component: TicketCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "tickets/update/:id",
-    component: TicketUpdateComponent
+    component: TicketUpdateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contacts/update/:id",
-    component: ContactUpdateComponent
+    component: ContactUpdateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "ticket/details/:id",
-    component: TicketDetailsComponent
+    component: TicketDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contacts",
-    component: ContactsComponent
+    component: ContactsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contacts/new",
-    component: ContactCreateComponent
+    component: ContactCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contact/details/:id",
-    component: ContactDetailsComponent
+    component: ContactDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
