@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataService {
-  API_URL = 'https://freshdesk-clone-api.herokuapp.com/';
+  API_URL = 'https://cors-anywhere.herokuapp.com/https://freshdesk-clone-api.herokuapp.com/';
   constructor(private http: HttpClient) { }
 
 

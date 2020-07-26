@@ -6,7 +6,7 @@ import {TicketData,ContactData,UserData} from '../model'
   providedIn: 'root'
 })
 export class AuthService {
-  API_URL = 'https://freshdesk-clone-api.herokuapp.com/';
+  API_URL = 'https://cors-anywhere.herokuapp.com/https://freshdesk-clone-api.herokuapp.com/';
   constructor(private http: HttpClient) { }
 
   addUser(user: UserData): Observable<any>{
