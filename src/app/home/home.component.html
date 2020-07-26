@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <h1 class="mt-4">Dashboard</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">
+                    <h6>Open Tickets</h6>
+                    <h5><strong>{{open_tickets}}</strong></h5>
+                </div>
+                    
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-warning text-white mb-4">
+                <div class="card-body">
+                    <h6>Unassigned Tickets</h6>
+                    <h5><strong>{{unassigned_tickets}}</strong></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-success text-white mb-4">
+                <div class="card-body">
+                    <h6>Solved Tickets</h6>
+                    <h5><strong>{{solved_tickets}}</strong></h5>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-danger text-white mb-4">
+                <div class="card-body">
+                    <h6>Overdue</h6>
+                    <h5><strong>{{overdue_tickets}}</strong></h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

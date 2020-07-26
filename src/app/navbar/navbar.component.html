@@ -1,0 +1,48 @@
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading" id="tick-id" ><i class="fa fa-book"
+                        aria-hidden="true"></i> Tickets
+                    <br><br><a class="nav-link" routerLink="/tickets">
+                        <div class="sb-nav-link-icon"></div>
+                        View Tickets
+                    </a>
+                    <a class="nav-link" routerLink="/ticket/new" >
+                        <div class="sb-nav-link-icon"></div>
+                        Create Ticket
+                    </a>
+                </div>
+
+
+                <div class="sb-sidenav-menu-heading" id="cont" ><i class="fas fa-address-book"
+                        aria-hidden="true"></i><span></span> Contacts
+                    <br><br><a class="nav-link" routerLink="/contacts" >
+                        <div class="sb-nav-link-icon"></div>
+                        View Contacts
+                    </a>
+                    <a class="nav-link" routerLink="/contacts/new" >
+                        <div class="sb-nav-link-icon"></div>
+                        Create Contact
+                    </a>
+                    <hr style="height:2px;width: 85%;border-color: gray;">
+                </div>
+               
+                <a class="nav-link" routerLink="/login" id="login-id">
+                    <div class="sb-nav-link-icon"></div>
+                    Login
+                </a>
+                <a class="nav-link" routerLink="/register" id="register-id" >
+                    <div class="sb-nav-link-icon"></div>
+                    Register
+                </a>
+                <a class="nav-link" (click)="logout()" id="logout-id" >
+                    <div class="sb-nav-link-icon"></div>
+                    Logout
+                </a>
+
+
+            </div>
+        </div>
+    </nav>
+</div>

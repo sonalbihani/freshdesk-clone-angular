@@ -1,13 +1,28 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { AuthService } from 'src/app/_service/auth.service';
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class AppComponent {
-  title = 'frontend';
-  ngOnInit():void{
+export class NavbarComponent implements OnInit {
+
+  token = localStorage.getItem('user-token');
+
+  constructor(
+    private router: Router, private authService: AuthService) {
+
+    
+  }
+  logout() {
+    this.authService.logout();
+    this.check_navbar()
+    this.router.navigate(['/login']);
+  }
+
+  ngOnInit(): void {
+    this.check_navbar()
     if (localStorage.getItem('user-token') == null) {
       document.getElementById("tick-id").style.display="none";
       document.getElementById("cont").style.display="none";
@@ -23,4 +38,8 @@ export class AppComponent {
       document.getElementById("logout-id").style.display="block";
     }
   }
+  check_navbar(){
+    
+  }
+
 }

@@ -1,0 +1,73 @@
+
+        <div class="container">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row ">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Ticket Details</h1>
+                                </div>
+                                <hr>
+                                <div class="bs-example">
+                                    <dl class="row">
+                                        <dt class="col-4">Contact Name</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.requester_id:''}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Subject</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.subject:''}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Description</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.description:''}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Status</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.status:''}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Category</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.category:''}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Source</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.source:''}}</dd>
+                                    </dl>
+                                    <dl class="row" *ngIf='!((tick_data)&&(tick_data.status==4))'>
+                                        <dt class="col-4">Due By</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.due_by:''}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Created on</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.created_at:'' }}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Last Updated on</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data.updated_at }}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4">Agent</dt>
+                                        <dd class="col-8" *ngIf='tick_data'>{{tick_data?tick_data.responder_id:''}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-4"></dt>
+                                        <dd class="col-8">
+                                            <button class="btn btn-dark mr-2"
+                                                (click)="ticket_update($event)">Update</button>
+                                            <button class="btn btn-danger ml-2"
+                                                (click)="ticket_delete()">Delete</button>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
